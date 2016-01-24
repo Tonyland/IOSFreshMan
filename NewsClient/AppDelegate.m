@@ -11,6 +11,7 @@
 #import "MainTabbarVC.h"
 #import "FrontpageVC.h"
 #import "MineVC.h"
+#import "BreakingNews.h"
 
 @interface AppDelegate ()
 
@@ -25,11 +26,12 @@
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     
+    BreakingNews *firstPage = [[BreakingNews alloc]initWithStyle:UITableViewStyleGrouped];
     FrontpageVC *frontPage = [[FrontpageVC alloc]init];
     MineVC *minePage = [[MineVC alloc]init];
     
     MainTabbarVC *tabbarVC = [[MainTabbarVC alloc]init];
-    tabbarVC.viewControllers = @[frontPage,minePage];
+    tabbarVC.viewControllers = @[firstPage,frontPage,minePage];
     tabbarVC.selectedIndex = 0;
     
     MainViewController *mainVC = [[MainViewController alloc]initWithRootViewController:tabbarVC];
