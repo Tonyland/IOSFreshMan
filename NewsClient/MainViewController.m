@@ -24,7 +24,7 @@
     self.navigationBar.barTintColor = [UIColor colorWithRed:54.0/255 green:105.0/255 blue:184.0/255 alpha:1.0];
     [self.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:19],
                                                                       NSForegroundColorAttributeName:[UIColor whiteColor]}];
-
+    NSLog(@"测试下提交代码");
 }
 
 - (void)didReceiveMemoryWarning {
