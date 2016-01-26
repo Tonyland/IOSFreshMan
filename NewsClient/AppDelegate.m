@@ -62,20 +62,14 @@
     [mainVC.view.layer.mask addAnimation:maskAnimation forKey:@"maskAnimation"];
     
     [UIView animateWithDuration:0.25 delay:1.3 options:UIViewAnimationOptionTransitionNone animations:^{
-        
         mainVC.view.transform = CGAffineTransformMakeScale(1.05, 1.05);
         
     } completion:^(BOOL finished) {
-        
         [UIView animateWithDuration:0.3 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-            
             mainVC.view.transform = CGAffineTransformIdentity;
             
         } completion:^(BOOL finished) {
-            
             mainVC.view.layer.mask = nil;
-            
-            
         }];
     }];
     

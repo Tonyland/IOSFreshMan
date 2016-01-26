@@ -27,6 +27,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self createGestureRecognizer];
+    
     // Do any additional setup after loading the view.
     UIImageView *_photoImage = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
     _photoImage.image = [UIImage imageNamed:@"news"];
@@ -38,6 +40,23 @@
 {
     [super viewWillAppear:animated];
     self.tabBarController.navigationItem.title = @"我的";
+}
+
+- (void)createGestureRecognizer {
+    //横扫手势识别器
+    UISwipeGestureRecognizer *leftToRight = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(leftToRightSwipeHandle:)];
+    //注册手势识别器
+    leftToRight.direction = UISwipeGestureRecognizerDirectionRight;
+    [self.view addGestureRecognizer:leftToRight];
+}
+#pragma mark 识别手势方法
+
+-(void)leftToRightSwipeHandle:(UISwipeGestureRecognizer *)recognizer
+{
+    self.tabBarController.selectedIndex = 1;
+    
+    NSLog(@"从主页右滑");
+    
 }
 
 - (void)didReceiveMemoryWarning {

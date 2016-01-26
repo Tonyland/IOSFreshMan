@@ -39,6 +39,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.clearsSelectionOnViewWillAppear = YES;//在页面出现时取消cell被选中以后的高亮状态
+    [self createGestureRecognizer];
     
     //初始化要用到的数据
     _sectionTitle = @[@"实时动态",@"开心一下"];//这是一个一维数组
@@ -144,6 +145,23 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
     return 5;
+}
+
+
+- (void)createGestureRecognizer {
+    //横扫手势识别器
+    UISwipeGestureRecognizer *rightToLeft = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(rightToLeftSwipeHandle:)];
+    //设置手势识别器属性（扫动方向）
+    rightToLeft.direction = UISwipeGestureRecognizerDirectionLeft;
+    //注册手势识别器
+    [self.view addGestureRecognizer:rightToLeft];
+}
+#pragma mark 识别手势方法
+
+-(void)rightToLeftSwipeHandle:(UISwipeGestureRecognizer *)recognizer
+{
+    self.tabBarController.selectedIndex = 1;
+    NSLog(@"最新消息左滑");
 }
 
 
