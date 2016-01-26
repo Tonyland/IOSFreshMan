@@ -2,8 +2,8 @@
 //  BreakingNews.m
 //  NewsClient
 //
-//  Created by maoxiaojun on 16/1/24.
-//  Copyright © 2016年 cmcc. All rights reserved.
+//  Created by LittleSmart on 16/1/24.
+//  Copyright © 2016年 LittleSmart. All rights reserved.
 //
 
 #import "BreakingNews.h"
